@@ -18,7 +18,7 @@ let ni = 5;
 
 for (let i = 1; i <= ni; i++) {
     let str = "";
-    str += "  ".repeat(ni - i);  // spaces
+    str += " ".repeat((ni - i)*2);  // spaces
     str += "* ".repeat(i);      // stars
     console.log(str);
 }
@@ -28,7 +28,7 @@ let no = 5;
 
 for (let i = 1; i <= no; i++) {
     let str = "";
-    str += " ".repeat((no - i) * 2); // extra spaces
+    str += " ".repeat(no - i); // extra spaces
     str += "* ".repeat(i);
     console.log(str);
 }
