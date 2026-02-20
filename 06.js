@@ -20,3 +20,17 @@ if (isAnagram(input1, input2)) {
 } else {
     console.log("Not an Anagram");
 }
+
+
+let vowels = ['a','e','i','o','u'];
+let string = "i am in banglore";
+
+let count = 0;
+
+for (let char of string) {
+    if (vowels.includes(char)) {
+        count++;
+    }
+}
+
+console.log("Total vowels:", count);
