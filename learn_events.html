@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sayhello(){
+            document.getElementById('hello').innerHTML="Hello Function";
+        }
+        function over(){
+            document.getElementById("hello").innerHTML="hiii"
+        }
+        function out(){
+            document.getElementById("hello").innerHTML="out"
+        }
+        function change(){
+            document.getElementById("hello").innerHTML="on change implementation"
+        }
+    </script>
+</head>
+<body>
+    <h1 id="hello"></h1>
+    <input type="text" onchange="change()">
+    <button onclick="sayhello()" onmouseover="over()" onmouseout="out()">Submit</button>
+</body>
+</html>
