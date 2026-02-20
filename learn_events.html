@@ -17,11 +17,14 @@
         function change(){
             document.getElementById("hello").innerHTML="on change implementation"
         }
+        function blur(){
+            document.getElementById("hello").innerHTML="on blur"
+        }
     </script>
 </head>
 <body>
     <h1 id="hello"></h1>
-    <input type="text" onchange="change()">
+    <input type="text" onchange="change()" onblur="blur()">
     <button onclick="sayhello()" onmouseover="over()" onmouseout="out()">Submit</button>
 </body>
 </html>
