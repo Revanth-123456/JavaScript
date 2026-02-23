@@ -23,11 +23,11 @@ if (isAnagram(input1, input2)) {
 
 
 let vowels = ['a','e','i','o','u'];
-let string = "i am in banglore";
+let string = "I am in banglore";
 
 let count = 0;
 
-for (let char of string) {
+for (let char of string.toLowerCase()) {
     if (vowels.includes(char)) {
         count++;
     }
