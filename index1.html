@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Control</title>
+
+    <script>
+        function speeding() {
+            let speed = 0;
+
+            return {
+                accelerate: function () {
+                    speed += 10;   // increase speed
+                    return speed;
+                },
+                brake: function () {   // cannot use "break"
+                    if (speed > 0) {
+                        speed -= 10;
+                    }
+                    return speed;
+                }
+            };
+        }
+
+        const data = speeding();
+        let statement = "";
+
+        function accelerate() {
+            let value = data.accelerate();
+            statement = `I am driving at a speed ${value}`;
+            document.getElementById("action").innerHTML = statement;
+        }
+
+        function brake() {
+            let value = data.brake();
+            statement = `I am driving at a speed ${value}`;
+            document.getElementById("action").innerHTML = statement;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Car Speed Control</h2>
+
+    <button onclick="accelerate()">Accelerate</button>
+    <button onclick="brake()">Brake</button>
+
+    <p id="action">I am driving at a speed 0</p>
+
+</body>
+</html>
