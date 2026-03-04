@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Promise Data Display</title>
+</head>
+
+<body>
+    <div id="data-container">Loading data.....</div>
+    <script>
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                //stimulate an asynchronous function
+                setTimeout(() => {
+                    const success = true;
+                    if (success) {
+                        const data = {
+                            id: 1,
+                            name: "Example item",
+                            description: "This is some data fetched",
+                        };
+                        resolve(data);
+                    } else {
+                        reject("Failed to fetch data.");
+                    }
+                }, 2000);
+            });
+        }
+
+        const dataContainer = document.getElementById("data-container");
+
+        fetchData()
+            .then((data) => {
+                dataContainer.innerHTML = `
+                    <h2>${data.name}</h2>
+                    <p>ID: ${data.id}</p>
+                    <p>${data.description}</p>
+                `;
+            })
+            .catch((error) => {
+                dataContainer.innerHTML = `<p style="color:red;">${error}</p>`;
+                console.log("promise rejected",error);
+            });
+
+    </script>
+
+</body>
+
+</html>
