@@ -64,3 +64,12 @@ orderFood().then((messsage)=>{
 }).catch((error)=>{
     console.log("Failed ",error);
 });
+
+
+// json-javascript object notation
+// this language used to make request and receive response
+
+// let obj={
+//     name:'david',
+//     employee:'yes',
+// }
